@@ -73,7 +73,6 @@ All function scripts have to fulfill certain criteria to ensure successful integ
 * Every function script has a core function that is named after the script, e.g. `example` in _example.sh_.
   Other function names are prefixed by the name of the core function and two colons, e.g. `example::display_usage` in _example.sh_.
 * A core function must provide detailed usage information if it receives the `--help` argument.
-* A function script must not use the `exit` command. Only `return` is allowed.
 * A function script must not use the `source` command. It has to be complete within itself.
 * A function script must not run any command outside of a function.
 * A function script must not contain global variables. 
