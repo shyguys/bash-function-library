@@ -3,13 +3,9 @@
 
 == Repository Details
 
-This repository contains various scripts with useful functions that can be sourced by other scripts.
+This repository contains various scripts with useful functions.
 
 == Usage
-
-[NOTE]
-Even though it is technically possible to use function scripts in other ways,
-the main purpose of a function script is to be sourced by another script.
 
 The following example shows a script that uses a function script:
 
@@ -67,7 +63,7 @@ TIP: Type `<function script> --help` for detailed information on how to use the 
 
 == Design Criteria
 
-All function scripts have to fulfill certain criteria to ensure successful integration in other scripts.
+All function scripts have to fulfill certain criteria to ensure seamless integration.
 
 .Criteria to fulfill:
 * Every function script has a core function that is named after the script, e.g. `example` in _example.sh_.
