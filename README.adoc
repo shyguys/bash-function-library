@@ -1,0 +1,79 @@
+= bash-function-library
+:toc: auto
+
+== Repository Details
+
+This repository contains various scripts with useful functions that can be sourced by other scripts.
+
+== Usage
+
+[NOTE]
+Even though it is technically possible to use function scripts in other ways,
+the main purpose of a function script is to be sourced by another script.
+
+The following example shows a script that uses a function script:
+
+.example/myscript.sh
+[source,shell]
+----
+#!/bin/bash
+#
+# Example script that displays the usage of a function script.
+
+source "example.sh"
+
+example "Hi!"
+----
+
+This is the function script that is used:
+
+.example/example.sh
+[source,shell]
+----
+#!/bin/bash
+#
+# Example function script.
+
+example::display_usage() {
+  cat << EOL
+Usage: example <MESSAGE> [OPTION]...
+Echo a message.
+
+Options:
+  --help    display this usage information. 
+EOL
+}
+
+example() {
+  if [[ "${1}" == "--help" ]]; then
+    example::display_usage
+    return 0
+  fi
+
+  echo "example says '${1}'"
+}
+----
+
+Calling _myscript.sh_ will look like this:
+
+.Terminal
+[source]
+----
+$ ./myscript.sh
+example says 'Hi!'
+----
+
+TIP: Type `<function script> --help` for detailed information on how to use the respective script.
+
+== Design Criteria
+
+All function scripts have to fulfill certain criteria to ensure successful integration in other scripts.
+
+.Criteria to fulfill:
+* Every function script has a core function that is named after the script, e.g. `example` in _example.sh_.
+  Other function names are prefixed by the name of the core function and two colons, e.g. `example::display_usage` in _example.sh_.
+* A core function must provide detailed usage information if it receives the `--help` argument.
+* A function script must not use the `exit` command. Only `return` is allowed.
+* A function script must not use the `source` command. It has to be complete within itself.
+* A function script must not run any command outside of a function.
+* A function script must not contain global variables. 
