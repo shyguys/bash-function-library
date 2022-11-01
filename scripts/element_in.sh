@@ -8,7 +8,7 @@ Usage: element_in <MATCH> <ARRAY> [OPTION...]
 Check if an element is in an array.
 
 Options:
-  tbc
+  --help    display this usage information.
 EOL
 }
 
