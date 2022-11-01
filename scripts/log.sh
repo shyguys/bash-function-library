@@ -4,7 +4,7 @@
 
 log::display_usage() {
   cat << EOL
-Usage: log <MESSAGE> [OPTION]...
+Usage: log <MESSAGE> [OPTION...]
 Log messages to the command line.
 
 Options:

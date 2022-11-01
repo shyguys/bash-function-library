@@ -4,7 +4,7 @@
 
 example::display_usage() {
   cat << EOL
-Usage: example <MESSAGE> [OPTION]...
+Usage: example <MESSAGE> [OPTION...]
 Echo a message.
 
 Options:

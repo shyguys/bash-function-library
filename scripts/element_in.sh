@@ -4,7 +4,7 @@
 
 element_in::display_usage() {
   cat << EOL
-Usage: element_in <MATCH> <ARRAY> [OPTION]...
+Usage: element_in <MATCH> <ARRAY> [OPTION...]
 Check if an element is in an array.
 
 Options:
