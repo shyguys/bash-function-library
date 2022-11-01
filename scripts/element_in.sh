@@ -34,6 +34,11 @@ element_in() {
   eval set -- "${GETOPT_PARSED_ARGS}"
   while true; do
     case "${1}" in
+      "--help")
+        element_in::display_usage
+        return 0
+      ;;
+
       "--")
         MATCH="${2}"
         shift 2
