@@ -112,7 +112,7 @@ log() {
 
       "--help")
         log::display_usage
-        exit 0
+        return 0
       ;;
 
       "--")
