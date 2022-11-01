@@ -3,7 +3,7 @@
 
 == Repository Details
 
-This is a library for commonly used bash functions.
+This repository is a library for commonly used bash functions.
 
 == Usage
 
